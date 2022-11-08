@@ -7,27 +7,20 @@
 const hre = require("hardhat");
 
 async function main() {
-  const currentTimestampInSeconds = Math.round(Date.now() / 1000);
-  const ONE_YEAR_IN_SECS = 365 * 24 * 60 * 60;
-  const unlockTime = currentTimestampInSeconds + ONE_YEAR_IN_SECS;
-
-  const lockedAmount = hre.ethers.utils.parseEther("1");
-
-  const Lock = await hre.ethers.getContractFactory("Lock");
-  const lock = await Lock.deploy(unlockTime, { value: lockedAmount });
-
-  await lock.deployed();
-
-  console.log(
-    `Lock with 1 ETH and unlock timestamp ${unlockTime} deployed to ${lock.address}`
-  );
-
   const Greeter = await hre.ethers.getContractFactory("Greeter");
   const greeter = await Greeter.deploy("Hello, Hardhat!");
-
   await greeter.deployed();
-
   console.log("Greeter deployed to:", greeter.address);
+
+  const Token = await hre.ethers.getContractFactory("Token");
+  const token = await Token.deploy();
+  await token.deployed();
+  console.log("Token deployed to:", token.address);
+
+  const PBTToken = await hre.ethers.getContractFactory("PBTToken");
+  const pbtToken = await PBTToken.deploy();
+  await pbtToken.deployed();
+  console.log("PBT Token deployed to:", pbtToken.address);
 }
 
 // We recommend this pattern to be able to use async/await everywhere

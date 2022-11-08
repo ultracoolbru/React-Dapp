@@ -1,13 +1,13 @@
-# Sample Hardhat Project
+# PayBee Demo Token
 
-This project demonstrates a basic Hardhat use case. It comes with a sample contract, a test for that contract, and a script that deploys that contract.
+Published demo token to Goerli:
 
-Try running some of the following tasks:
+https://goerli.etherscan.io/token/0x7c4e4bfe65cfbf394c70d14bed2e894466283b3f
 
-```shell
-npx hardhat help
-npx hardhat test
-REPORT_GAS=true npx hardhat test
-npx hardhat node
-npx hardhat run scripts/deploy.js
-```
+Entire process was completed with the help of this video: 
+
+https://www.youtube.com/watch?v=a0osIaAOFSE
+
+Tested sending PBT tokens to different addresses and working well.
+
+

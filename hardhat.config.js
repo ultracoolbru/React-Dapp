@@ -17,5 +17,11 @@ module.exports = {
         accountsBalance: "1000000000000000000000000",
       },
     },
+    goerli: {
+      url: process.end.REACT_APP_INFURA_URL,
+      accounts: [`0x${process.env.REACT_APP_META_PRIVATE_KEY}`],
+    }
   },
 };
+
+//0x7849F95e1FcfAF5352658524A65Fe6E3081A5b9B
